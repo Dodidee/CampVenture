@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-auto" href="/"><img src="/stylesheets/pictures/camplogo.png" alt="" style="width: 40px;margin-right: 15px;margin-left: 10px;">CampVenture</a>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <img src="/stylesheets/pictures/camplogo.png" alt="" style="width: 40px;margin-right: 15px;">CampVenture
+
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="/campground">All Campground</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="/campground/new">New Campground</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#">Category</a>
+          </li> -->
+        </ul>
+        <!-- Placeholders for buttons inside offcanvas -->
+        <div id="offcanvas-buttons" class="d-lg-none" style="margin-top:50px;"></div>
+      </div>
+    </div>
+    <div id="navbar-buttons" class="d-none d-lg-flex">
+      <% if (typeof currentUser !=="undefined" && currentUser) { %>
+      <form action="/logout" method="POST">
+        <button class="logout-button">Logout</button>
+      </form>
+      <% } else { %>
+      <a href="/register" class="signup-button"><button type="button" class="signup-text-button">Sign-up</button></a>
+      <a class="login-button" href="/login">Login</a>
+      <% } %>
+    </div>
+    <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<script src="/javascript/activeCurrentPage.js"></script>
+<script src="/javascript/toggleButtons.js"></script>
